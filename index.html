@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bigi Drinks</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- font awesome fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arvo&family=Texturina&display=swap"
+      rel="stylesheet"
+    />
+    <!--   Custom css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="bg-color"></div>
+      <header class="navbar">
+        <div class="logo">
+          <img src="images/Rite-Foods-Logo-1.png" alt="" />
+        </div>
+        <div class="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Media-Centre</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="toggle-menu" onclick="openMenu()">
+          <img src="images/iconfinder_General_-_Office_30_1471080.png" alt="" />
+        </div>
+      </header>
+      <div class="side-menu">
+        <div class="close1">
+          <a href="#" class="close" onclick="closeMenu()"> &times;</a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Who We Are</a></li>
+            <li><a href="#">Our Golden Rules</a></li>
+            <li><a href="#">Media-Centre</a></li>
+            <li><a href="#">Brands You Love</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <main>
+        <div class="container">
+          <div class="left-side">
+            <h2 id="flavour">Bigi Drinks</h2>
+            <p>
+              Bigi Beverages are fun and exciting colorful range of soft drinks
+              that is fantastically refreshing and is a proudly Nigerian brand.
+              Available in 35CL & 60CL.
+            </p>
+            <button class="btn"><a href="#">Buy Now</a></button>
+            <ul class="thumb">
+              <li>
+                <img
+                  src="images/bigi_cola.png"
+                  alt=""
+                  onclick="imgSlider('images/bigi_cola.png', 'Bigi Cola');changeBgColor('#1e1e1e');addAnimate()"
+                />
+              </li>
+              <li>
+                <img
+                  src="images/bigi_orange.png"
+                  alt=""
+                  onclick="imgSlider('images/bigi_orange.png', 'Bigi Orange');changeBgColor('#BD431C');addAnimate2()"
+                />
+              </li>
+              <li>
+                <img
+                  src="images/bigi_tropical.png"
+                  alt=""
+                  onclick="imgSlider('images/bigi_tropical.png', 'Bigi Tropical');changeBgColor('#C99D00');addAnimate3()"
+                />
+              </li>
+            </ul>
+          </div>
+
+          <div class="right-side">
+            <img src="images/bigi_cola.png" alt="" class="bigi" />
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      function imgSlider(image, flavour) {
+        document.querySelector(".bigi").src = image;
+        document.getElementById("flavour").innerText = flavour;
+      }
+      function changeBgColor(color) {
+        const sec = document.querySelector(".bg-color");
+
+        sec.style.background = color;
+      }
+
+      //animations I had to repeat animation 3times. I should have used loop
+      function addAnimate() {
+        document.querySelector(".bigi").style.animation = " slideIn .5s";
+      }
+
+      function addAnimate2() {
+        document.querySelector(".bigi").style.animation = " slideIn2 .5s";
+      }
+      function addAnimate3() {
+        document.querySelector(".bigi").style.animation = " slideIn3 .5s";
+      }
+
+      const openMenu = () => {
+        document.querySelector(".side-menu").style.width = "375px";
+      };
+
+      const closeMenu = () => {
+        document.querySelector(".side-menu").style.width = "0";
+      };
+    </script>
+  </body>
+</html>
